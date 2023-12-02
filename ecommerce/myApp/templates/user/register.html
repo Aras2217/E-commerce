@@ -1,0 +1,124 @@
+{% extends 'base.html' %}  
+{% load static %}
+
+
+{% block body %}
+           <!-- Bottom Bar Start -->
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-3">
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="{% static 'img/logo.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+                            <button><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="user">
+                            <a href="wishlist.html" class="btn wishlist">
+                                <i class="fa fa-heart"></i>
+                                <span>(0)</span>
+                            </a>
+                            <a href="cart.html" class="btn cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span>(0)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bottom Bar End --> 
+        
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container-fluid">
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Products</a></li>
+                    <li class="breadcrumb-item active">Login & Register</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+        
+        <!-- Login Start -->
+        <section class="" style="background-color: #9A616D;">
+            <div class="container py-5 h-100">
+               <div class="row d-flex justify-content-center align-items-center h-100">
+                  <div class="col col-xl-10">
+                     <div class="card" style="border-radius: 1rem;">
+                        <div class="row g-0 justify-content-center">
+                           
+                           <div class="col-md-4 col-lg-7 d-flex align-items-center">
+                              <div class="card-body p-4 p-lg-5 text-black">
+                                 <form method="POST">
+                                    {% csrf_token %}
+                                    <div class="d-flex align-items-center mb-2 pb-1">
+                                       <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                                       <span class="h1 fw-bold mb-0">Logo</span>
+                                    </div>
+         
+                                    <h5 class="fw-normal mb-1 pb-3" style="letter-spacing: 1px;">Kayıt Ol</h5>
+         
+                                    <div class="form-outline mb-2">
+                                       <label class="form-label" for="form2Example17">Kullanıcı Adı</label>
+                                       <input name="username" type="text" id="form2Example17" class="form-control form-control-lg" />
+                                       
+                                    </div>
+                                    <div class="form-outline mb-2">
+                                       <label class="form-label" for="form2Example17">Ad</label>
+                                       <input name="fname" type="text" id="form2Example17" class="form-control form-control-lg" />
+                                       
+                                    </div>
+                                    <div class="form-outline mb-2">
+                                       <label class="form-label" for="form2Example17">Soyad</label>
+                                       <input name="lname" type="text" id="form2Example17" class="form-control form-control-lg" />
+                                       
+                                    </div>
+      
+                                    <div class="form-outline mb-2">
+                                       <label class="form-label" for="form2Example17">Email address</label>
+                                       <input name="email" type="email" id="form2Example17" class="form-control form-control-lg" />
+                                       
+                                    </div>
+         
+                                    <div class="form-outline mb-2">
+                                       <label class="form-label" for="form2Example27">Şifre</label>
+                                       <input name="password1" type="password" id="form2Example27" class="form-control form-control-lg" />
+                                       
+                                    </div>
+                                    <div class="form-outline mb-2">
+                                       <label class="form-label" for="form2Example27">Tekrar Şifre</label>
+                                       <input name="password2" type="password" id="form2Example27" class="form-control form-control-lg" />
+                                       
+                                    </div>
+         
+                                    <div class="pt-1 mb-2">
+                                       <button class="btn btn-dark btn-lg btn-block" type="submit">Kaydol</button>
+                                    </div>
+         
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Zaten bir hesabım var 
+                                       <a href="{% url 'loginUser' %}" style="color: #393f81;">Giriş Yap</a></p>
+                                 </form>
+         
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+        
+        
+{% endblock body %}
+    
+        
